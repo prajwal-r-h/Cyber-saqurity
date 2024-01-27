@@ -1,28 +1,23 @@
 '''Python program to implement symmetric encryption using python library'''
 
 from cryptography.fernet import Fernet
+key = Fernet.generate_key()
+# Create a Fernet object with the generated key
+f = Fernet(key)
 
-def main():
-    # Generate a key for encryption
-    key = Fernet.generate_key()
+# Take user input for the message to encrypt
+#message = input("Enter the message to encrypt: ")
 
-    # Create a Fernet object with the generated key
-    f = Fernet(key)
+# Convert the message to bytes and encrypt it
+#token = f.encrypt(message.encode('utf-8'))
+token = f.encrypt(b"klejtbca")
 
-    # Take user input for the message to encrypt
-    #message = input("Enter the message to encrypt: ")
+# Print the encrypted token
+print("Encrypted Token:", token)
 
-    # Convert the message to bytes and encrypt it
-    #token = f.encrypt(message.encode('utf-8'))
-    token = f.encrypt(b"klejtbca")
+# Decrypt the token and print the original message
+decrypted_message = f.decrypt(token).decode('utf-8')
+print("Decrypted Message:", decrypted_message)
 
-    # Print the encrypted token
-    print("Encrypted Token:", token)
 
-    # Decrypt the token and print the original message
-    decrypted_message = f.decrypt(token).decode('utf-8')
-    print("Decrypted Message:", decrypted_message)
-
-if __name__ == "__main__":
-    main()
 
