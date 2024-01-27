@@ -1,6 +1,8 @@
 '''Python program to implement symmetric encryption using python library'''
 from cryptography.fernet import Fernet
 
+from cryptography.fernet import Fernet
+
 def main():
     # Generate a key for encryption
     key = Fernet.generate_key()
@@ -9,10 +11,11 @@ def main():
     f = Fernet(key)
 
     # Take user input for the message to encrypt
-    message = input("Enter the message to encrypt: ")
+    #message = input("Enter the message to encrypt: ")
 
     # Convert the message to bytes and encrypt it
-    token = f.encrypt(message.encode('utf-8'))
+    #token = f.encrypt(message.encode('utf-8'))
+    token = f.encrypt(b"klejtbca")
 
     # Print the encrypted token
     print("Encrypted Token:", token)
@@ -23,3 +26,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
