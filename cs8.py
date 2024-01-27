@@ -1,5 +1,4 @@
 '''Python program to implement symmetric encryption using python library'''
-from cryptography.fernet import Fernet
 
 from cryptography.fernet import Fernet
 
